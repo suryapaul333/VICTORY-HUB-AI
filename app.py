@@ -33,7 +33,7 @@ OTP_MAX_ATTEMPTS=5
 
 @app.context_processor
 def inject_brand():
-    return {"app_name": APP_NAME, "app_tagline": APP_TAGLINE, "app_slogan": APP_SLOGAN, "is_admin": is_admin()}
+    return {"app_name": APP_NAME, "app_tagline": APP_TAGLINE, "app_slogan": APP_SLOGAN, "is_admin": is_admin(), "is_faculty": is_faculty()}
 
 CATALOG={'CSE': {'1': ['Engineering Mathematics I', 'Engineering Physics', 'Programming for Problem Solving', 'Engineering Graphics', 'English / Communication Skills'], '2': ['Engineering Mathematics II', 'Engineering Chemistry', 'Data Structures', 'Digital Logic Design', 'Object Oriented Programming'], '3': ['Discrete Mathematics', 'Database Management Systems', 'Operating Systems', 'Computer Networks', 'Computer Organization & Architecture'], '4': ['Design and Analysis of Algorithms', 'Software Engineering', 'Web Technologies', 'Theory of Computation', 'Artificial Intelligence'], '5': ['Machine Learning', 'Compiler Design', 'Computer Graphics', 'Distributed Systems', 'Professional Elective I'], '6': ['Cloud Computing', 'Data Mining', 'Cyber Security', 'Professional Elective II', 'Open Source Technologies'], '7': ['Internet of Things', 'Big Data Analytics', 'Professional Elective III', 'Project / Internship', 'Technical Seminar'], '8': ['Project Work', 'Professional Elective IV', 'Professional Elective V', 'Technical Seminar / Viva', 'Comprehensive Viva']}, 'AI & ML': {'1': ['Engineering Mathematics I', 'Engineering Physics', 'Programming for Problem Solving', 'Engineering Graphics', 'English / Communication Skills'], '2': ['Engineering Mathematics II', 'Engineering Chemistry', 'Data Structures', 'Object Oriented Programming', 'Digital Logic Design'], '3': ['Probability & Statistics', 'Database Management Systems', 'Operating Systems', 'Computer Networks', 'Artificial Intelligence'], '4': ['Machine Learning', 'Design and Analysis of Algorithms', 'Deep Learning', 'Theory of Computation', 'Web Technologies'], '5': ['Natural Language Processing', 'Computer Vision', 'Reinforcement Learning', 'Data Mining', 'Professional Elective I'], '6': ['Big Data Analytics', 'Generative AI', 'Cloud Computing', 'MLOps', 'Professional Elective II'], '7': ['Advanced Machine Learning', 'Deep Learning Applications', 'Professional Elective III', 'Project / Internship', 'Technical Seminar'], '8': ['Major Project', 'Professional Elective IV', 'Professional Elective V', 'Project Viva', 'Comprehensive Viva']}, 'AI & DS': {'1': ['Engineering Mathematics I', 'Engineering Physics', 'Programming for Problem Solving', 'Engineering Graphics', 'English / Communication Skills'], '2': ['Engineering Mathematics II', 'Engineering Chemistry', 'Data Structures', 'Object Oriented Programming', 'Digital Logic Design'], '3': ['Probability & Statistics', 'Database Management Systems', 'Data Visualization', 'Python for Data Science', 'Computer Networks'], '4': ['Machine Learning', 'Design and Analysis of Algorithms', 'Data Mining', 'Artificial Intelligence', 'Web Technologies'], '5': ['Big Data Analytics', 'Natural Language Processing', 'Deep Learning', 'Data Warehousing', 'Professional Elective I'], '6': ['Cloud Computing', 'Generative AI', 'MLOps', 'Business Intelligence', 'Professional Elective II'], '7': ['Advanced Data Analytics', 'Deep Learning Applications', 'Professional Elective III', 'Project / Internship', 'Technical Seminar'], '8': ['Major Project', 'Professional Elective IV', 'Professional Elective V', 'Project Viva', 'Comprehensive Viva']}, 'IT': {'1': ['Engineering Mathematics I', 'Engineering Physics', 'Programming for Problem Solving', 'Engineering Graphics', 'English / Communication Skills'], '2': ['Engineering Mathematics II', 'Engineering Chemistry', 'Data Structures', 'Object Oriented Programming', 'Digital Logic Design'], '3': ['Database Management Systems', 'Operating Systems', 'Computer Networks', 'Computer Organization', 'Software Engineering'], '4': ['Design and Analysis of Algorithms', 'Web Technologies', 'Theory of Computation', 'Artificial Intelligence', 'Professional Elective I'], '5': ['Machine Learning', 'Cloud Computing', 'Cyber Security', 'Data Mining', 'Professional Elective II'], '6': ['Big Data Analytics', 'Mobile Application Development', 'DevOps', 'Internet of Things', 'Professional Elective III'], '7': ['Advanced Web Technologies', 'Cloud Security', 'Professional Elective IV', 'Project / Internship', 'Technical Seminar'], '8': ['Major Project', 'Professional Elective V', 'Professional Elective VI', 'Project Viva', 'Comprehensive Viva']}, 'ECE': {'1': ['Engineering Mathematics I', 'Engineering Physics', 'Programming for Problem Solving', 'Engineering Graphics', 'English / Communication Skills'], '2': ['Engineering Mathematics II', 'Engineering Chemistry', 'Basic Electrical Engineering', 'Electronic Devices', 'Digital Logic Design'], '3': ['Signals and Systems', 'Network Analysis', 'Analog Circuits', 'Digital Electronics', 'Electromagnetic Waves'], '4': ['Control Systems', 'Microprocessors and Microcontrollers', 'Communication Systems', 'Linear IC Applications', 'Probability and Random Processes'], '5': ['Digital Signal Processing', 'VLSI Design', 'Embedded Systems', 'Antenna and Wave Propagation', 'Professional Elective I'], '6': ['Computer Architecture', 'IoT Systems', 'Wireless Communications', 'Optical Communications', 'Professional Elective II'], '7': ['Advanced VLSI', 'Embedded AI', 'RF and Microwave Engineering', 'Project / Internship', 'Technical Seminar'], '8': ['Major Project', 'Professional Elective III', 'Professional Elective IV', 'Project Viva', 'Comprehensive Viva']}, 'EEE': {'1': ['Engineering Mathematics I', 'Engineering Physics', 'Programming for Problem Solving', 'Engineering Graphics', 'English / Communication Skills'], '2': ['Engineering Mathematics II', 'Engineering Chemistry', 'Basic Electronics', 'Electrical Circuit Analysis', 'Electrical Machines I'], '3': ['Electrical Machines II', 'Power Systems I', 'Power Electronics', 'Control Systems', 'Measurements and Instrumentation'], '4': ['Power Systems II', 'Microprocessors and Microcontrollers', 'Electrical Drives', 'Signals and Systems', 'Power System Protection'], '5': ['High Voltage Engineering', 'Switchgear and Protection', 'Renewable Energy Sources', 'Digital Signal Processing', 'Professional Elective I'], '6': ['Power System Analysis', 'Smart Grid', 'Electric Vehicle Technology', 'Industrial Automation', 'Professional Elective II'], '7': ['Advanced Power Electronics', 'Power Quality', 'Energy Management', 'Project / Internship', 'Technical Seminar'], '8': ['Major Project', 'Professional Elective III', 'Professional Elective IV', 'Project Viva', 'Comprehensive Viva']}, 'MECH': {'1': ['Engineering Mathematics I', 'Engineering Physics', 'Programming for Problem Solving', 'Engineering Graphics', 'English / Communication Skills'], '2': ['Engineering Mathematics II', 'Engineering Chemistry', 'Engineering Mechanics', 'Basic Electrical Engineering', 'Manufacturing Processes'], '3': ['Thermodynamics', 'Fluid Mechanics', 'Strength of Materials', 'Machine Drawing', 'Material Science'], '4': ['Theory of Machines', 'Heat Transfer', 'Machine Design I', 'Manufacturing Technology', 'Metrology and Measurements'], '5': ['Machine Design II', 'Internal Combustion Engines', 'Refrigeration and Air Conditioning', 'CAD/CAM', 'Professional Elective I'], '6': ['Finite Element Methods', 'Robotics', 'Automobile Engineering', 'Industrial Engineering', 'Professional Elective II'], '7': ['Additive Manufacturing', 'Mechatronics', 'Advanced Manufacturing', 'Project / Internship', 'Technical Seminar'], '8': ['Major Project', 'Professional Elective III', 'Professional Elective IV', 'Project Viva', 'Comprehensive Viva']}, 'CIVIL': {'1': ['Engineering Mathematics I', 'Engineering Physics', 'Programming for Problem Solving', 'Engineering Graphics', 'English / Communication Skills'], '2': ['Engineering Mathematics II', 'Engineering Chemistry', 'Engineering Mechanics', 'Basic Electrical Engineering', 'Building Materials'], '3': ['Strength of Materials', 'Fluid Mechanics', 'Surveying', 'Structural Analysis I', 'Concrete Technology'], '4': ['Structural Analysis II', 'Geotechnical Engineering I', 'Hydrology and Water Resources', 'Transportation Engineering I', 'Environmental Engineering I'], '5': ['Design of Reinforced Concrete Structures', 'Geotechnical Engineering II', 'Transportation Engineering II', 'Environmental Engineering II', 'Professional Elective I'], '6': ['Design of Steel Structures', 'Estimation and Costing', 'Construction Management', 'Hydraulic Engineering', 'Professional Elective II'], '7': ['Advanced Structural Engineering', 'Remote Sensing and GIS', 'Earthquake Engineering', 'Project / Internship', 'Technical Seminar'], '8': ['Major Project', 'Professional Elective III', 'Professional Elective IV', 'Project Viva', 'Comprehensive Viva']}}
 
@@ -102,7 +102,8 @@ def init_db():
     c=get_db()
     if c.postgres:
         c.execute('''CREATE TABLE IF NOT EXISTS users(
-            id BIGSERIAL PRIMARY KEY,name TEXT NOT NULL,email TEXT UNIQUE,phone TEXT UNIQUE,password TEXT NOT NULL)''')
+            id BIGSERIAL PRIMARY KEY,name TEXT NOT NULL,email TEXT UNIQUE,phone TEXT UNIQUE,password TEXT NOT NULL,
+            role TEXT DEFAULT 'student')''')
         c.execute('''CREATE TABLE IF NOT EXISTS semester_subjects(
             id BIGSERIAL PRIMARY KEY,user_id BIGINT NOT NULL,branch TEXT NOT NULL,year TEXT NOT NULL,
             semester TEXT NOT NULL,subject_names TEXT NOT NULL,
@@ -126,7 +127,8 @@ def init_db():
             UNIQUE(branch,regulation,year,semester,subject))''')
     else:
         c.execute('''CREATE TABLE IF NOT EXISTS users(
-            id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT NOT NULL,email TEXT UNIQUE,phone TEXT UNIQUE,password TEXT NOT NULL)''')
+            id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT NOT NULL,email TEXT UNIQUE,phone TEXT UNIQUE,password TEXT NOT NULL,
+            role TEXT DEFAULT 'student')''')
         c.execute('''CREATE TABLE IF NOT EXISTS semester_subjects(
             id INTEGER PRIMARY KEY AUTOINCREMENT,user_id INTEGER NOT NULL,branch TEXT NOT NULL,year TEXT NOT NULL,
             semester TEXT NOT NULL,subject_names TEXT NOT NULL,UNIQUE(user_id,branch,year,semester))''')
@@ -146,6 +148,11 @@ def init_db():
             semester TEXT NOT NULL,subject TEXT NOT NULL,stored_name TEXT NOT NULL,original_name TEXT NOT NULL,
             uploaded_by TEXT,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
             UNIQUE(branch,regulation,year,semester,subject))''')
+    try:
+        c.execute("ALTER TABLE users ADD COLUMN role TEXT DEFAULT 'student'")
+        c.commit()
+    except Exception:
+        c.rollback()
     c.commit(); c.close()
 
 def resources(subject):
@@ -198,15 +205,19 @@ def smtp_configured():
 
 def send_otp_email(to_email, name, otp):
     host=os.environ.get("SMTP_HOST",""); user=os.environ.get("SMTP_USER",""); password=os.environ.get("SMTP_PASSWORD","")
-    if not (host and user and password and to_email): return False
+    if not (host and user and password and to_email):
+        print(f"[OTP EMAIL] Skipped — missing config. host={bool(host)} user={bool(user)} password={bool(password)} to_email={bool(to_email)}")
+        return False
     try:
         msg=EmailMessage(); msg["Subject"]=f"{APP_NAME} - Your Password Reset OTP"
         msg["From"]=os.environ.get("FROM_EMAIL",user); msg["To"]=to_email
         msg.set_content(f"Hello {name},\n\nYour {APP_NAME} password reset OTP is: {otp}\n\nThis code is valid for {OTP_VALID_MINUTES} minutes. If you did not request this, you can ignore this email.")
         with smtplib.SMTP(host,int(os.environ.get("SMTP_PORT","587")),timeout=10) as server:
             server.starttls(); server.login(user,password); server.send_message(msg)
+        print(f"[OTP EMAIL] Sent successfully to {to_email}")
         return True
-    except Exception:
+    except Exception as e:
+        print(f"[OTP EMAIL] FAILED to send to {to_email}: {type(e).__name__}: {e}")
         return False
 
 def latest_prediction():
@@ -274,6 +285,9 @@ def is_admin():
     phone_match=bool(ADMIN_PHONE) and normalize_phone(session.get("user_phone",""))==normalize_phone(ADMIN_PHONE)
     return email_match or phone_match
 
+def is_faculty():
+    return session.get("user_role")=="faculty"
+
 @app.route("/admin")
 def admin():
     if not session.get("user_id"): return redirect(url_for("login"))
@@ -282,6 +296,46 @@ def admin():
     if not is_admin():
         return render_template("message.html",title="Admin access",message="Admin access is restricted." if (ADMIN_EMAIL or ADMIN_PHONE) else "Admin access is disabled until ADMIN_EMAIL or ADMIN_PHONE is configured in your environment.")
     return render_template("admin.html",users=users,preds=preds)
+
+@app.route("/api/catalog-subjects")
+def api_catalog_subjects():
+    if not session.get("user_id"): return jsonify({"subjects":[]})
+    branch=request.args.get("branch","CSE")
+    year=request.args.get("year","1")
+    sem=request.args.get("semester","1")
+    semester_no=(int(year)-1)*2+int(sem)
+    subjects=CATALOG.get(branch,CATALOG["CSE"]).get(str(semester_no),[])
+    return jsonify({"subjects":subjects})
+
+def save_notes_pdf(branch, regulation, year, sem, subject, file, uploader_email):
+    if not subject:
+        return "Please choose a subject.", None
+    if not file or file.filename=="":
+        return "Please choose a PDF file.", None
+    if not file.filename.lower().endswith(".pdf"):
+        return "Only PDF files are allowed.", None
+    file.seek(0,os.SEEK_END); size_mb=file.tell()/(1024*1024); file.seek(0)
+    if size_mb>MAX_PDF_MB:
+        return f"File too large. Max size is {MAX_PDF_MB} MB.", None
+    safe_subject=secure_filename(subject.lower().replace(" ","-"))[:60]
+    stored_name=f"{branch}_{regulation}_{year}_{sem}_{safe_subject}_{secrets.token_hex(4)}.pdf"
+    stored_name=secure_filename(stored_name)
+    file.save(os.path.join(NOTES_UPLOAD_DIR, stored_name))
+    c=get_db()
+    existing=c.execute("SELECT id,stored_name FROM notes_files WHERE branch=? AND regulation=? AND year=? AND semester=? AND subject=?",
+                        (branch,regulation,year,sem,subject)).fetchone()
+    if existing:
+        old_path=os.path.join(NOTES_UPLOAD_DIR, existing["stored_name"])
+        if os.path.exists(old_path):
+            try: os.remove(old_path)
+            except OSError: pass
+        c.execute("UPDATE notes_files SET stored_name=?,original_name=?,uploaded_by=?,created_at=CURRENT_TIMESTAMP WHERE id=?",
+                  (stored_name, secure_filename(file.filename), uploader_email, existing["id"]))
+    else:
+        c.execute("INSERT INTO notes_files(branch,regulation,year,semester,subject,stored_name,original_name,uploaded_by) VALUES(?,?,?,?,?,?,?,?)",
+                  (branch,regulation,year,sem,subject,stored_name,secure_filename(file.filename),uploader_email))
+    c.commit(); c.close()
+    return None, f"Uploaded notes PDF for {subject} ({branch} {regulation} Y{year}S{sem})."
 
 @app.route("/admin/notes",methods=["GET","POST"])
 def admin_notes():
@@ -294,36 +348,7 @@ def admin_notes():
         year=request.form.get("year","1"); sem=request.form.get("semester","1")
         subject=request.form.get("subject","").strip()
         file=request.files.get("pdf_file")
-        if not subject:
-            error="Please choose a subject."
-        elif not file or file.filename=="":
-            error="Please choose a PDF file."
-        elif not file.filename.lower().endswith(".pdf"):
-            error="Only PDF files are allowed."
-        else:
-            file.seek(0,os.SEEK_END); size_mb=file.tell()/(1024*1024); file.seek(0)
-            if size_mb>MAX_PDF_MB:
-                error=f"File too large. Max size is {MAX_PDF_MB} MB."
-            else:
-                safe_subject=secure_filename(subject.lower().replace(" ","-"))[:60]
-                stored_name=f"{branch}_{regulation}_{year}_{sem}_{safe_subject}_{secrets.token_hex(4)}.pdf"
-                stored_name=secure_filename(stored_name)
-                file.save(os.path.join(NOTES_UPLOAD_DIR, stored_name))
-                c=get_db()
-                existing=c.execute("SELECT id,stored_name FROM notes_files WHERE branch=? AND regulation=? AND year=? AND semester=? AND subject=?",
-                                    (branch,regulation,year,sem,subject)).fetchone()
-                if existing:
-                    old_path=os.path.join(NOTES_UPLOAD_DIR, existing["stored_name"])
-                    if os.path.exists(old_path):
-                        try: os.remove(old_path)
-                        except OSError: pass
-                    c.execute("UPDATE notes_files SET stored_name=?,original_name=?,uploaded_by=?,created_at=CURRENT_TIMESTAMP WHERE id=?",
-                              (stored_name, secure_filename(file.filename), session.get("user_email",""), existing["id"]))
-                else:
-                    c.execute("INSERT INTO notes_files(branch,regulation,year,semester,subject,stored_name,original_name,uploaded_by) VALUES(?,?,?,?,?,?,?,?)",
-                              (branch,regulation,year,sem,subject,stored_name,secure_filename(file.filename),session.get("user_email","")))
-                c.commit(); c.close()
-                success=f"Uploaded notes PDF for {subject} ({branch} {regulation} Y{year}S{sem})."
+        error, success = save_notes_pdf(branch, regulation, year, sem, subject, file, session.get("user_email",""))
     c=get_db(); files=c.execute("SELECT * FROM notes_files ORDER BY id DESC").fetchall(); c.close()
     return render_template("admin_notes.html",catalog=CATALOG,regulations=REGULATIONS,error=error,success=success,files=files)
 
@@ -343,6 +368,38 @@ def admin_notes_delete(file_id):
     c.close()
     return redirect(url_for("admin_notes"))
 
+@app.route("/faculty-desk",methods=["GET","POST"])
+def faculty_desk():
+    if not session.get("user_id"): return redirect(url_for("login"))
+    if not is_faculty():
+        return render_template("message.html",title="Faculty Desk",message="Faculty Desk is available to accounts registered with the Faculty role.")
+    error=""; success=""
+    if request.method=="POST":
+        branch=request.form.get("branch","CSE"); regulation=request.form.get("regulation","R20")
+        year=request.form.get("year","1"); sem=request.form.get("semester","1")
+        subject=request.form.get("subject","").strip()
+        file=request.files.get("pdf_file")
+        error, success = save_notes_pdf(branch, regulation, year, sem, subject, file, session.get("user_email",""))
+    c=get_db(); files=c.execute("SELECT * FROM notes_files ORDER BY id DESC").fetchall(); c.close()
+    return render_template("faculty_desk.html",catalog=CATALOG,regulations=REGULATIONS,error=error,success=success,
+                            files=files,my_email=session.get("user_email",""))
+
+@app.route("/faculty-desk/delete/<int:file_id>",methods=["POST"])
+def faculty_desk_delete(file_id):
+    if not session.get("user_id") or not is_faculty():
+        return redirect(url_for("login"))
+    c=get_db()
+    row=c.execute("SELECT * FROM notes_files WHERE id=?", (file_id,)).fetchone()
+    if row and row["uploaded_by"]==session.get("user_email",""):
+        path=os.path.join(NOTES_UPLOAD_DIR, row["stored_name"])
+        if os.path.exists(path):
+            try: os.remove(path)
+            except OSError: pass
+        c.execute("DELETE FROM notes_files WHERE id=?", (file_id,))
+        c.commit()
+    c.close()
+    return redirect(url_for("faculty_desk"))
+
 @app.route("/notes/file/<int:file_id>")
 def notes_file(file_id):
     if not session.get("user_id"): return redirect(url_for("login"))
@@ -355,25 +412,114 @@ def notes_file(file_id):
         return render_template("message.html",title="Not found",message="This notes PDF is not available anymore.")
     return send_file(path, mimetype="application/pdf", as_attachment=False, download_name=row["original_name"])
 
+def find_subject_in_text(msg, subjects):
+    msg_words = [w for w in msg.split() if len(w)>=3]
+    for s in subjects:
+        sname=s["name"].lower()
+        if sname in msg: return s
+        words=[w for w in re.split(r'[\s/&-]+', sname) if len(w)>2]
+        for w in words:
+            if w in msg: return s
+            for mw in msg_words:
+                if len(w)>=4 and len(mw)>=4 and (w.startswith(mw[:4]) or mw.startswith(w[:4])):
+                    return s
+    return None
+
 @app.route("/api/chat",methods=["POST"])
 def chat():
     if not session.get("user_id"): return jsonify({"reply":"Please login first."}),401
-    msg=(request.get_json(silent=True) or {}).get("message","").strip().lower()
+    raw=(request.get_json(silent=True) or {}).get("message","").strip()
+    msg=re.sub(r'[^a-z0-9\s]', ' ', raw.lower())
+    uname=session.get("user_name","there").split(" ")[0]
     result=build_result(latest_prediction())
-    if not msg: return jsonify({"reply":"Ask me about your score, weak subjects, study plan, attendance, or report."})
-    if "weak" in msg or "subject" in msg:
-        reply="Your priority subjects are: " + ", ".join(x["name"] for x in (result["weak"] if result else [])) + "." if result else "Enter your performance details first."
-    elif "score" in msg or "performance" in msg:
-        reply=f"Your latest predicted performance is {result['score']}% ({result['label']})." if result else "No prediction is available yet."
-    elif "attendance" in msg:
-        reply=f"Your latest attendance is {result['attendance']}%." if result else "Enter attendance in the performance form first."
-    elif "plan" in msg or "study" in msg:
-        reply="Follow the 7-day plan shown on your prediction page and spend extra time on your weakest subjects."
-    elif "report" in msg or "pdf" in msg:
-        reply="Use the Download PDF Report button on the dashboard."
-    else:
-        reply="I can help with your score, weak subjects, study plan, attendance, and PDF report."
-    return jsonify({"reply":reply})
+
+    if not msg:
+        return jsonify({"reply":"Ask me about your score, weak subjects, study plan, attendance, a specific subject's marks, CGPA, notes, or your PDF report."})
+
+    # Greetings
+    if re.search(r'\b(hi|hii|hey|hello|hai)\b', msg) and len(msg.split())<=3:
+        return jsonify({"reply":f"Hi {uname}! I can tell you about your score, weak subjects, study plan, attendance, subject marks, CGPA, notes, or history. What would you like to know?"})
+    if re.search(r'\b(thanks|thank you|thank u|thankyou)\b', msg):
+        return jsonify({"reply":"You're welcome! Let me know if you need anything else. 🙂"})
+    if re.search(r'\b(bye|goodbye|see you)\b', msg):
+        return jsonify({"reply":f"Good luck with your studies, {uname}! Come back anytime."})
+    if re.search(r'\b(help|what can you do|options|commands)\b', msg):
+        return jsonify({"reply":"I can help with: your latest score, weak subjects, a specific subject's marks (e.g. \"marks in DBMS\"), the 7-day study plan, attendance, average/best score history, CGPA/SGPA calculator, notes for a subject, downloading your PDF report, and password reset."})
+
+    # Specific subject mark lookup
+    if result and result.get("all_subjects") and re.search(r'\b(mark|marks|score|grade)\b', msg) and ("in " in msg or "for " in msg):
+        found=find_subject_in_text(msg, result["all_subjects"])
+        if found:
+            weak_note=" This is one of your weaker subjects — check the Notes page for extra material." if found["weak"] else ""
+            return jsonify({"reply":f"Your marks in {found['name']} are {found['mark']}%.{weak_note}"})
+
+    # Weak subjects
+    if re.search(r'\bweak\b', msg) or ("subject" in msg and re.search(r'\b(priority|focus|improve|low)\b', msg)):
+        if result and result["weak"]:
+            items=", ".join(f"{x['name']} ({x['mark']}%)" for x in result["weak"])
+            return jsonify({"reply":f"Your priority subjects are: {items}. Visit the Notes page for study material on these."})
+        return jsonify({"reply":"Enter your performance details first on the Student Prediction page, and I'll tell you your weak subjects."})
+
+    # Score / performance / pass-fail
+    if re.search(r'\b(score|performance|passing|pass|fail|result)\b', msg):
+        if result:
+            return jsonify({"reply":f"Your latest predicted performance is {result['score']}% ({result['label']}). {result['message']}"})
+        return jsonify({"reply":"No prediction is available yet — fill in your details on the Student Prediction page first."})
+
+    # Attendance
+    if "attendance" in msg:
+        if result:
+            note = " That's below the usual 75% requirement — try to attend more classes." if float(result['attendance'])<75 else " That's a healthy attendance level, keep it up!"
+            return jsonify({"reply":f"Your latest attendance is {result['attendance']}%.{note}"})
+        return jsonify({"reply":"Enter your attendance on the Student Prediction page first."})
+
+    # Study plan
+    if re.search(r'\b(plan|study|schedule|routine)\b', msg):
+        if result and result["plan"]:
+            lines=[f"{d}: {topic} — {task} ({dur})" for d,topic,task,dur in result["plan"]]
+            return jsonify({"reply":"Here's your 7-day plan:\n" + "\n".join(lines)})
+        return jsonify({"reply":"Complete a prediction first on the Student Prediction page — I'll build a personalized 7-day plan around your weak subjects."})
+
+    # History / average / best / trend
+    if re.search(r'\b(history|average|avg|best|trend|improving|progress)\b', msg):
+        c=get_db()
+        rows=c.execute("SELECT score FROM predictions WHERE user_id=? ORDER BY id ASC",(session["user_id"],)).fetchall()
+        c.close()
+        if rows:
+            scores=[float(r["score"]) for r in rows]
+            avg=round(statistics.mean(scores),2); best=round(max(scores),2)
+            trend=""
+            if len(scores)>=2:
+                trend = " You're trending upward! 📈" if scores[-1]>scores[-2] else (" Your last score dipped a bit — review your weak subjects." if scores[-1]<scores[-2] else "")
+            return jsonify({"reply":f"You have {len(scores)} prediction(s). Average score: {avg}%, Best score: {best}%.{trend} Check the History page for full details."})
+        return jsonify({"reply":"No prediction history yet — complete a prediction to start tracking your progress."})
+
+    # CGPA / SGPA
+    if re.search(r'\b(cgpa|sgpa|gpa|grade point)\b', msg):
+        return jsonify({"reply":"Use the CGPA page (top navigation) — enter Internal marks (/30) and your External Grade per subject to get your SGPA, or enter each semester's SGPA and credits to get your overall CGPA."})
+
+    # Notes / video lectures
+    if re.search(r'\b(notes|material|pdf notes|video|lecture)\b', msg) and "report" not in msg:
+        subj_hint=""
+        if result and result.get("all_subjects"):
+            found=find_subject_in_text(msg, result["all_subjects"])
+            if found:
+                subj_hint=f" For {found['name']}, check the Notes page and search for it — you'll get a direct PDF or video link."
+        return jsonify({"reply":"Visit the Notes page (top navigation) — pick your Branch, Regulation, Year and Semester, then use the search box to find any subject's notes and video lectures." + subj_hint})
+
+    # Report / PDF
+    if re.search(r'\b(report|download)\b', msg):
+        return jsonify({"reply":"Go to your Dashboard and click \"Download PDF Report\" to get your full performance report as a PDF."})
+
+    # Password / login
+    if re.search(r'\b(password|login|forgot|otp)\b', msg):
+        return jsonify({"reply":"To reset your password, log out and click \"Forgot Password?\" on the login page — you'll get an OTP to verify before setting a new password."})
+
+    # Admin
+    if is_admin() and re.search(r'\b(admin|upload notes|manage)\b', msg):
+        return jsonify({"reply":"As admin, use the Admin tab to view students and predictions, and the \"Upload Notes PDFs\" option on the Notes page to add official subject notes."})
+
+    return jsonify({"reply":"I'm not sure about that yet — try asking about your score, weak subjects, a subject's marks, study plan, attendance, CGPA, notes, history, or PDF report."})
 
 @app.route("/")
 def home():
@@ -407,6 +553,11 @@ def save_subjects():
               (session["user_id"],branch,year,sem,"|".join(subjects)))
     c.commit(); c.close()
     return jsonify({"ok":True,"subjects":subjects})
+
+@app.route("/cgpa")
+def cgpa_calculator():
+    if not session.get("user_id"): return redirect(url_for("login"))
+    return render_template("cgpa.html")
 
 @app.route("/notes")
 def notes():
@@ -443,8 +594,9 @@ def register():
         try:
             c=get_db()
             phone_norm=normalize_phone(request.form["phone"])
-            c.execute("INSERT INTO users(name,email,phone,password) VALUES(?,?,?,?)",
-                      (request.form["name"],request.form["email"],phone_norm,generate_password_hash(request.form["password"])))
+            role="faculty" if request.form.get("role")=="faculty" else "student"
+            c.execute("INSERT INTO users(name,email,phone,password,role) VALUES(?,?,?,?,?)",
+                      (request.form["name"],request.form["email"],phone_norm,generate_password_hash(request.form["password"]),role))
             c.commit(); c.close(); return redirect(url_for("login"))
         except sqlite3.IntegrityError: error="Email or phone number is already registered."
         except Exception as e:
@@ -461,7 +613,7 @@ def login():
         x=request.form["identity"].strip()
         x_phone=normalize_phone(x)
         c=get_db()
-        row=c.execute("SELECT id,name,email,phone,password FROM users WHERE email=? OR phone=? OR phone=?", (x,x,x_phone)).fetchone()
+        row=c.execute("SELECT id,name,email,phone,password,role FROM users WHERE email=? OR phone=? OR phone=?", (x,x,x_phone)).fetchone()
         password_ok=False
         if row:
             stored=row["password"]
@@ -478,6 +630,7 @@ def login():
             session["user_name"]=row["name"]
             session["user_email"]=row["email"]
             session["user_phone"]=row["phone"]
+            session["user_role"]=row["role"] or "student"
             return redirect(url_for("details"))
         error="Invalid email/phone or password."
     return render_template("login.html",error=error)
