@@ -1,0 +1,18 @@
+FINAL UPDATE: EDITABLE COLLEGE SUBJECTS
+
+This version adds:
+- Visible Subject Name edit fields
+- Add Subject
+- Remove Subject
+- Save My Semester Subjects
+- Saved subjects are tied to logged-in user + Branch + Year + Semester
+- Saved subject names flow into prediction, weak-subject detection, notes/video resources and study plan
+- External marks are /70, Internal /30, Assignment /25
+- Existing login/register, branches, years/semesters, prediction and history are retained
+
+RUN:
+py -m pip install -r requirements.txt
+py app.py
+Open http://127.0.0.1:5000
+
+If you are replacing an older version, back up the old folder first.
