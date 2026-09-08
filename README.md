@@ -1,4 +1,4 @@
-# AI Student Performance Prediction System
+# VICTORY HUB AI 
 Pages: Register -> Login -> Student Details -> Prediction -> History.
 Register uses Email + Phone + Password. Login accepts Email OR Phone + Password.
 
